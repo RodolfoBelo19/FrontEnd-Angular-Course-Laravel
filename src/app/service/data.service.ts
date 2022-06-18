@@ -7,28 +7,30 @@ import { Employee } from "../employee";
 })
 export class DataService {
 
+  base = 'http://2c33-192-141-191-216.ngrok.io';
+
   constructor(
     private httpClient: HttpClient
   ) {}
 
   getData() {
-    return this.httpClient.get('http://localhost:8000/api/employees');
+    return this.httpClient.get(`${this.base}/api/employees`);
   }
 
   insertData(data: any) {
-    return this.httpClient.post('http://localhost:8000/api/addEmployee', data);
+    return this.httpClient.post(`${this.base}/api/addEmployee`, data);
   }
 
   updateData(id: any, data: any) {
-    return this.httpClient.put(`http://localhost:8000/api/updateEmployee/${id}`, data);
+    return this.httpClient.put(`${this.base}/api/updateEmployee/${id}`, data);
   }
 
   deleteData(id: any) {
-    return this.httpClient.delete(`http://localhost:8000/api/deleteEmployee/${id}`)
+    return this.httpClient.delete(`${this.base}/api/deleteEmployee/${id}`)
   }
 
   getDataById(id: any) {
-    return this.httpClient.get(`http://localhost:8000/api/employee/${id}`)
+    return this.httpClient.get(`${this.base}/api/employee/${id}`)
   }
 
 }
