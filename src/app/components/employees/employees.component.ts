@@ -21,9 +21,9 @@ export class EmployeesComponent implements OnInit {
   }
 
   getEmployeesData() {
-      this.dataService.getData().subscribe(res => {
-    this.employees = res;
-      })
+    this.dataService.getData().subscribe(res => {
+     this.employees = res;
+    })
   }
 
   insertData() {
